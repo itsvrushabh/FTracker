@@ -1,11 +1,11 @@
 from sqlalchemy import create_engine, MetaData
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from models import Base
 
 # Database URL for PostgreSQL (modify this if you're using another DB)
-DATABASE_URL = "postgresql+asyncpg://username:password@localhost/dbname"
-
+DATABASE_URL = "postgresql+asyncpg://dev-user:password@postgres:15432/dev_db"
+DATABASE_URL = "postgresql+asyncpg://dev-user:password@localhost:15432/dev_db"
 # Async database connection (SQLAlchemy)
 engine = create_async_engine(DATABASE_URL, echo=True, future=True)
 
@@ -16,8 +16,11 @@ AsyncSessionLocal = sessionmaker(
     expire_on_commit=False
 )
 
-# Base class for models
-Base = declarative_base()
+async def create_tables():
+    engine = create_async_engine(DATABASE_URL, echo=True)
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    await engine.dispose()
 
 # Get async session for dependency injection
 async def get_db():

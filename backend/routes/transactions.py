@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.db import get_db
+from database import get_db
 from models.transaction import Transaction
 from datetime import datetime
 from pydantic import BaseModel
@@ -21,7 +21,7 @@ class TransactionOut(BaseModel):
     date: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # List all transactions (GET)

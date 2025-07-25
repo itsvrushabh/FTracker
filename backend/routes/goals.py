@@ -1,8 +1,10 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.db import SessionLocal
+from database import get_db
 from models.goal import Goal  # Assuming you have a Goal model
+from pydantic import BaseModel
+from datetime import datetime
 
 router = APIRouter()
 
@@ -17,7 +19,7 @@ class GoalOut(BaseModel):
     target_date: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Get all goals
 @router.get("/", response_model=list[GoalOut])
