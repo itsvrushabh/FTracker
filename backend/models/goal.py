@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date
 from models import Base
-#Create a Goal model
+
 class Goal(Base):
     __tablename__ = "goals"
 

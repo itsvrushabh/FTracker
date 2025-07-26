@@ -10,8 +10,8 @@ services:
       - 15432:5432
     expose:
       - "15432"
-    volumes:
-      - db-data:/var/lib/postgresql/data:cached
+    # volumes:
+    #   - db-data:/var/lib/postgresql/data:cached
 
   # test-postgres:
   #   image: postgres:16.9
@@ -62,7 +62,6 @@ services:
   #     - NODE_ENV=development
   #   ports:
   #     - 3000:3000
-
-volumes:
-  db-data:
-  test-db-data:
+# volumes:
+#   db-data:
+#   test-db-data:

@@ -1,3 +1,84 @@
+-- Category Types
+INSERT INTO category_types (id, name, is_active) VALUES
+(1, 'Income', 1),
+(2, 'Expense', 1),
+(3, 'Savings', 1),
+(4, 'Investment', 1),
+(5, 'Other', 1),
+(6, 'Unknown', 1),
+(7, 'Asset', 1),
+(8, 'Liability', 1),
+(9, 'Loan', 1),
+(10, 'Transfer', 1),
+(11, 'Timebound', 1),
+(12, 'Recurring', 1);
+
+-- Categories
+INSERT INTO categories (id, name, description, type_id, is_active) VALUES
+-- Income
+(1, 'Salary', 'Monthly salary from employer', 1, 1),
+(2, 'Freelance', 'Freelance or gig-based income', 1, 1),
+(3, 'Bonus', 'Work-related performance bonus', 1, 1),
+
+-- Expense
+(4, 'Utilities', 'Electricity, water, gas, internet bills', 2, 1),
+(5, 'Transportation', 'Car, public transport, taxi expenses', 2, 1),
+(6, 'Food', 'Groceries, dining out, snacks', 2, 1),
+(7, 'Clothing', 'Clothing, shoes, accessories', 2, 1),
+(8, 'Health', 'Medical expenses, insurance', 2, 1),
+(9, 'Entertainment', 'Movies, concerts, gaming', 2, 1),
+(10, 'Travel', 'Airfare, hotel, transportation', 2, 1),
+(11, 'Education', 'Tuition fees, books, supplies', 2, 1),
+(12, 'Personal Care', 'Haircuts, beauty products, grooming', 2, 1),
+
+-- Savings
+(13, 'Savings Account', 'Bank savings account', 3, 1),
+(14, 'Emergency Fund', 'Emergency fund savings', 3, 1),
+(15, 'Retirement Fund', 'Retirement savings', 3, 1),
+
+-- Investment
+(16, 'Stocks', 'Investment in stock market', 4, 1),
+(17, 'Mutual Funds', 'Investment in mutual funds', 4, 1),
+(18, 'Real Estate', 'Investment in real estate', 4, 1),
+(19, 'Cryptocurrency', 'Investment in cryptocurrencies', 4, 1),
+(20, 'Private Equity', 'Investment in private equity', 4, 1),
+(21, 'Venture Capital', 'Investment in venture capital', 4, 1),
+
+-- Timebound
+(22, 'Annual Subscription', 'Yearly subscription services', 11, 1),
+(23, 'Life Insurance', 'Long-term life insurance plan', 11, 1),
+
+-- Recurring
+(24, 'Monthly Subscription', 'Monthly subscription services', 12, 1),
+(25, 'Quarterly Subscription', 'Quarterly subscription services', 12, 1),
+(26, 'Bi-Annual Subscription', 'Bi-Annual subscription services', 12, 1),
+(27, 'Weekly Subscription', 'Weekly subscription services', 12, 1),
+(28, 'Daily Subscription', 'Daily subscription services', 12, 1),
+
+-- Other
+(29, 'Other Income', 'Other sources of income', 5, 1),
+(30, 'Other Expenses', 'Other expenses', 5, 1),
+
+-- Loans
+(31, 'Personal Loans', 'Personal Loan payments', 9, 1),
+(32, 'Car Loans', 'Car Loan payments', 9, 1),
+(33, 'Student Loans', 'Student Loan payments', 9, 1),
+(34, 'Mortgage Loans', 'Mortgage Loan payments', 9, 1),
+(35, 'Credit Card Payments', 'Credit Card payments', 9, 1),
+(36, 'Home Loans', 'Home Loan payments', 9, 1),
+(37, 'Other Loans', 'Other Loan payments', 9, 1),
+
+-- Transfers
+(38, 'One-Time Payment', 'One-time payment', 10, 1),
+(39, 'Charity', 'Charity donations', 10, 1),
+
+-- Liability
+(40, 'Gifts', 'Gift expenses', 8, 1),
+
+-- Asset
+(41, 'House Payments', 'House payments', 7, 1);
+
+
 -- SQL dump to insert initial category types
 INSERT INTO category_types (id, name, is_active) VALUES
 (1, 'Income', 1),
