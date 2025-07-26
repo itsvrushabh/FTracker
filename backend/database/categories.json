@@ -1,0 +1,291 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Salary",
+      "description": "Monthly salary from employer",
+      "type_id": 1,
+      "is_active": 1
+    },
+    {
+      "id": 2,
+      "name": "Freelance",
+      "description": "Freelance or gig-based income",
+      "type_id": 1,
+      "is_active": 1
+    },
+    {
+      "id": 3,
+      "name": "Bonus",
+      "description": "Work-related performance bonus",
+      "type_id": 1,
+      "is_active": 1
+    },
+    {
+      "id": 4,
+      "name": "Utilities",
+      "description": "Electricity, water, gas, internet bills",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 5,
+      "name": "Transportation",
+      "description": "Car, public transport, taxi expenses",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 6,
+      "name": "Food",
+      "description": "Groceries, dining out, snacks",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 7,
+      "name": "Clothing",
+      "description": "Clothing, shoes, accessories",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 8,
+      "name": "Health",
+      "description": "Medical expenses, insurance",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 9,
+      "name": "Entertainment",
+      "description": "Movies, concerts, gaming",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 10,
+      "name": "Travel",
+      "description": "Airfare, hotel, transportation",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 11,
+      "name": "Education",
+      "description": "Tuition fees, books, supplies",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 12,
+      "name": "Personal Care",
+      "description": "Haircuts, beauty products, grooming",
+      "type_id": 2,
+      "is_active": 1
+    },
+    {
+      "id": 13,
+      "name": "Savings Account",
+      "description": "Bank savings account",
+      "type_id": 3,
+      "is_active": 1
+    },
+    {
+      "id": 14,
+      "name": "Emergency Fund",
+      "description": "Emergency fund savings",
+      "type_id": 3,
+      "is_active": 1
+    },
+    {
+      "id": 15,
+      "name": "Retirement Fund",
+      "description": "Retirement savings",
+      "type_id": 3,
+      "is_active": 1
+    },
+    {
+      "id": 16,
+      "name": "Stocks",
+      "description": "Investment in stock market",
+      "type_id": 4,
+      "is_active": 1
+    },
+    {
+      "id": 17,
+      "name": "Mutual Funds",
+      "description": "Investment in mutual funds",
+      "type_id": 4,
+      "is_active": 1
+    },
+    {
+      "id": 18,
+      "name": "Real Estate",
+      "description": "Investment in real estate",
+      "type_id": 4,
+      "is_active": 1
+    },
+    {
+      "id": 19,
+      "name": "Cryptocurrency",
+      "description": "Investment in cryptocurrencies",
+      "type_id": 4,
+      "is_active": 1
+    },
+    {
+      "id": 20,
+      "name": "Private Equity",
+      "description": "Investment in private equity",
+      "type_id": 4,
+      "is_active": 1
+    },
+    {
+      "id": 21,
+      "name": "Venture Capital",
+      "description": "Investment in venture capital",
+      "type_id": 4,
+      "is_active": 1
+    },
+    {
+      "id": 22,
+      "name": "Annual Subscription",
+      "description": "Yearly subscription services",
+      "type_id": 11,
+      "is_active": 1
+    },
+    {
+      "id": 23,
+      "name": "Life Insurance",
+      "description": "Long-term life insurance plan",
+      "type_id": 11,
+      "is_active": 1
+    },
+    {
+      "id": 24,
+      "name": "Monthly Subscription",
+      "description": "Monthly subscription services",
+      "type_id": 12,
+      "is_active": 1
+    },
+    {
+      "id": 25,
+      "name": "Quarterly Subscription",
+      "description": "Quarterly subscription services",
+      "type_id": 12,
+      "is_active": 1
+    },
+    {
+      "id": 26,
+      "name": "Bi-Annual Subscription",
+      "description": "Bi-Annual subscription services",
+      "type_id": 12,
+      "is_active": 1
+    },
+    {
+      "id": 27,
+      "name": "Weekly Subscription",
+      "description": "Weekly subscription services",
+      "type_id": 12,
+      "is_active": 1
+    },
+    {
+      "id": 28,
+      "name": "Daily Subscription",
+      "description": "Daily subscription services",
+      "type_id": 12,
+      "is_active": 1
+    },
+    {
+      "id": 29,
+      "name": "Other Income",
+      "description": "Other sources of income",
+      "type_id": 5,
+      "is_active": 1
+    },
+    {
+      "id": 30,
+      "name": "Other Expenses",
+      "description": "Other expenses",
+      "type_id": 5,
+      "is_active": 1
+    },
+    {
+      "id": 31,
+      "name": "Personal Loans",
+      "description": "Personal Loan payments",
+      "type_id": 9,
+      "is_active": 1
+    },
+    {
+      "id": 32,
+      "name": "Car Loans",
+      "description": "Car Loan payments",
+      "type_id": 9,
+      "is_active": 1
+    },
+    {
+      "id": 33,
+      "name": "Student Loans",
+      "description": "Student Loan payments",
+      "type_id": 9,
+      "is_active": 1
+    },
+    {
+      "id": 34,
+      "name": "Mortgage Loans",
+      "description": "Mortgage Loan payments",
+      "type_id": 9,
+      "is_active": 1
+    },
+    {
+      "id": 35,
+      "name": "Credit Card Payments",
+      "description": "Credit Card payments",
+      "type_id": 9,
+      "is_active": 1
+    },
+    {
+      "id": 36,
+      "name": "Home Loans",
+      "description": "Home Loan payments",
+      "type_id": 9,
+      "is_active": 1
+    },
+    {
+      "id": 37,
+      "name": "Other Loans",
+      "description": "Other Loan payments",
+      "type_id": 9,
+      "is_active": 1
+    },
+    {
+      "id": 38,
+      "name": "One-Time Payment",
+      "description": "One-time payment",
+      "type_id": 10,
+      "is_active": 1
+    },
+    {
+      "id": 39,
+      "name": "Charity",
+      "description": "Charity donations",
+      "type_id": 10,
+      "is_active": 1
+    },
+    {
+      "id": 40,
+      "name": "Gifts",
+      "description": "Gift expenses",
+      "type_id": 8,
+      "is_active": 1
+    },
+    {
+      "id": 41,
+      "name": "House Payments",
+      "description": "House payments",
+      "type_id": 7,
+      "is_active": 1
+    }
+  ]
+}

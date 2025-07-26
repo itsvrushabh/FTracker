@@ -1,0 +1,16 @@
+{
+  "category_types": [
+    { "id": 1, "name": "Income", "is_active": 1 },
+    { "id": 2, "name": "Expense", "is_active": 1 },
+    { "id": 3, "name": "Savings", "is_active": 1 },
+    { "id": 4, "name": "Investment", "is_active": 1 },
+    { "id": 5, "name": "Other", "is_active": 1 },
+    { "id": 6, "name": "Unknown", "is_active": 1 },
+    { "id": 7, "name": "Asset", "is_active": 1 },
+    { "id": 8, "name": "Liability", "is_active": 1 },
+    { "id": 9, "name": "Loan", "is_active": 1 },
+    { "id": 10, "name": "Transfer", "is_active": 1 },
+    { "id": 11, "name": "Timebound", "is_active": 1 },
+    { "id": 12, "name": "Recurring", "is_active": 1 }
+  ]
+}
