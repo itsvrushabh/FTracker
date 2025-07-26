@@ -1,0 +1,40 @@
+# Set the default behavior to automatically normalize line endings
+* text=auto
+
+# Explicitly declare text files to ensure correct line endings
+*.py     text
+*.md     text
+*.txt    text
+*.json   text
+*.yml    text
+*.yaml   text
+*.csv    text
+*.ini    text
+*.cfg    text
+*.env    text
+
+# Treat shell scripts as text and ensure LF line endings
+*.sh     text eol=lf
+
+# Images and binary files - do not modify line endings
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.zip    binary
+*.gz     binary
+*.tar    binary
+*.mp4    binary
+*.mp3    binary
+
+# Handle Windows and Mac system files as binary
+*.exe    binary
+*.dll    binary
+*.dmg    binary
+
+# Ensure Jupyter notebooks are treated as text (for diffing)
+*.ipynb  text
+
+# End of file
