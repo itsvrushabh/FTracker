@@ -57,8 +57,8 @@ services:
       dockerfile: Dockerfile
     stdin_open: true
     volumes:
-      - "./frontend:/app:cached"
-      - "./frontend/node_modules:/app/node_modules:cached"
+      - "./frontend/ftracker:/app:cached"
+      - "./frontend/ftracker/node_modules:/app/node_modules:cached"
     environment:
       - NODE_ENV=development
     ports:
