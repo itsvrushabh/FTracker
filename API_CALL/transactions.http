@@ -1,0 +1,34 @@
+FTracker/API_CALL/transactions.http
+###
+# List all transactions
+GET http://localhost:8000/transactions/
+Accept: application/json
+
+###
+# Create a new transaction
+POST http://localhost:8000/transactions/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "amount": 100.0,
+  "description": "Sample transaction",
+  "date": "2024-06-01T12:00:00Z"
+}
+
+###
+# Update a transaction (replace {transaction_id} with an actual ID)
+PUT http://localhost:8000/transactions/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "amount": 150.0,
+  "description": "Updated transaction",
+  "date": "2024-06-02T15:30:00Z"
+}
+
+###
+# Delete a transaction (replace {transaction_id} with an actual ID)
+DELETE http://localhost:8000/transactions/1
+Accept: application/json

@@ -13,12 +13,16 @@ class TransactionCreate(BaseModel):
     amount: float
     description: str
     date: datetime
+    currency_id: int
+    category_id: int
 
 class TransactionOut(BaseModel):
     id: int
     amount: float
     description: str
     date: datetime
+    currency_id: int
+    category_id: int
 
     class Config:
         from_attributes = True
@@ -28,7 +32,7 @@ class TransactionOut(BaseModel):
 @router.get("/", response_model=list[TransactionOut])
 async def list_transactions(db: AsyncSession = Depends(get_db)):
     async with db.begin():
-        result = await db.execute(select(Transaction))
+        result = await db.execute(select(Transaction).where(Transaction.is_deleted == False))
         transactions = result.scalars().all()
     return transactions
 
@@ -38,7 +42,9 @@ async def create_transaction(transaction: TransactionCreate, db: AsyncSession = 
     db_transaction = Transaction(
         amount=transaction.amount,
         description=transaction.description,
-        date=transaction.date
+        date=transaction.date,
+        currency_id=transaction.currency_id,
+        category_id=transaction.category_id
     )
     db.add(db_transaction)
     await db.commit()
@@ -56,6 +62,8 @@ async def update_transaction(transaction_id: int, transaction: TransactionCreate
         db_transaction.amount = transaction.amount
         db_transaction.description = transaction.description
         db_transaction.date = transaction.date
+        db_transaction.currency_id = transaction.currency_id
+        db_transaction.category_id = transaction.category_id
         await db.commit()
         await db.refresh(db_transaction)
     return db_transaction
@@ -68,6 +76,7 @@ async def delete_transaction(transaction_id: int, db: AsyncSession = Depends(get
         if db_transaction is None:
             raise HTTPException(status_code=404, detail="Transaction not found")
 
-        await db.delete(db_transaction)
+        db_transaction.is_deleted = True
         await db.commit()
+        await db.refresh(db_transaction)
     return None

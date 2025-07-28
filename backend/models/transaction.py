@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Float, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, Float, String, DateTime, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from models import Base
@@ -14,6 +14,7 @@ class Transaction(Base):
     currency = relationship("Currency", back_populates="transactions")
     category_id = Column(Integer, ForeignKey("categories.id"), nullable=False)
     category = relationship("Category", back_populates="transactions")
+    is_deleted = Column(Boolean, default=False)
 
     def __repr__(self):
         return f"<Transaction(id={self.id}, amount={self.amount}, description={self.description}, date={self.date})>"
