@@ -9,3 +9,9 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-install-project
 
 COPY . /app
+
+# Expose the port the app runs on
+EXPOSE 8000
+
+# Start the fastapi app
+CMD ["uv", "run", "fastapi", "dev", "main.py"]
