@@ -27,6 +27,9 @@ class TransactionOut(BaseModel):
     class Config:
         from_attributes = True
 
+class TransactionsCreate(BaseModel):
+    transactions: list[TransactionCreate]
+
 
 # List all transactions (GET)
 @router.get("/", response_model=list[TransactionOut])
@@ -62,8 +65,8 @@ async def update_transaction(transaction_id: int, transaction: TransactionCreate
         db_transaction.amount = transaction.amount
         db_transaction.description = transaction.description
         db_transaction.date = transaction.date
-        db_transaction.currency_id = transaction.currency_id
         db_transaction.category_id = transaction.category_id
+        db_transaction.currency_id = transaction.currency_id
         await db.commit()
         await db.refresh(db_transaction)
     return db_transaction
@@ -80,3 +83,20 @@ async def delete_transaction(transaction_id: int, db: AsyncSession = Depends(get
         await db.commit()
         await db.refresh(db_transaction)
     return None
+
+# Create multiple transactions (POST)
+@router.post("/bulk", response_model=list[TransactionOut])
+async def create_transactions_bulk(transactions_data: TransactionsCreate, db: AsyncSession = Depends(get_db)):
+    db_transactions = [
+        Transaction(
+            amount=tx.amount,
+            description=tx.description,
+            date=tx.date
+        )
+        for tx in transactions_data.transactions
+    ]
+    db.add_all(db_transactions)
+    await db.commit()
+    for db_transaction in db_transactions:
+        await db.refresh(db_transaction)
+    return db_transactions
